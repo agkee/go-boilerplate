@@ -16,7 +16,7 @@ import (
 var (
 	addr  = flag.String("addr", "0.0.0.0:9090", "Default HTTP address")
 	debug = flag.Bool("debug", false, "Set logging level to debug")
-	dsn   = flag.String("dsn", "", "Set DSN for sentry alerting")
+	dsn   = flag.String("dsn", "your_DSN", "Set DSN for sentry alerting")
 
 	writeTimeout = time.Second * 30
 	readTimeout  = time.Second * 30

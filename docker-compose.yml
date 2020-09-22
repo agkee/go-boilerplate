@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  server:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 9090:9090
+    command: "./serverd"
+  test:
+    build: .
+    volumes:
+      - .:/app
+    command: bash -c "go test ./... -race -coverprofile=covreage.txt -covermode=atomic -v"

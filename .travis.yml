@@ -4,10 +4,10 @@ go:
   - "1.15"
 
 install:
-  - sudo docker build -t server .
+  - sudo docker-compose build
 
 script:
-  - sudo docker run server go test -v ./...
+  - sudo docker-compose run test
 
 after-success:
   - bash <(curl -s https://codecov.io/bash)
