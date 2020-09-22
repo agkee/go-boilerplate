@@ -22,6 +22,9 @@ var (
 )
 
 func main() {
+	flag.Parse()
+	observe.InitLogging(*debug, *dsn)
+
 	r := web.NewRouter()
 	// r = observe.RegisterPrometheus(r)
 
