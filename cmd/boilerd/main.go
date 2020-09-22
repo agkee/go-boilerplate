@@ -9,6 +9,7 @@ import (
 	"os/signal"
 	"time"
 
+	"github.com/agkee/go-boilerplate.git/internal/observe"
 	"github.com/agkee/go-boilerplate.git/internal/web"
 )
 
@@ -26,7 +27,7 @@ func main() {
 	observe.InitLogging(*debug, *dsn)
 
 	r := web.NewRouter()
-	// r = observe.RegisterPrometheus(r)
+	r = observe.RegisterPrometheus(r)
 
 	// Setting timeouts and handlers for http server
 	s := &http.Server{
