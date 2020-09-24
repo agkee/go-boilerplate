@@ -8,6 +8,14 @@ services:
     ports:
       - 9090:9090
     command: "./serverd"
+  server-dev:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 9090:9090
   test:
     build: .
     volumes:
